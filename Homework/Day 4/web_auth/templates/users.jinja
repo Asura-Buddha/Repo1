@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+
+{% block title %}Users Page {% endblock %}
+
+{% block body %}
+    Users Page
+    {% for i in users %}
+        {{ i }}
+    {% endfor %}
+{% endblock %}
