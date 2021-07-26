@@ -18,6 +18,7 @@ def index():
 # login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    sw = 0
     if (request.method == 'POST'):
         username = request.form["usr"]
         password = request.form["pss"]
@@ -37,6 +38,8 @@ def login():
 # register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    sw1 = 0
+    sw2 = 0
     if (request.method == 'POST'):
         nm = request.form['nm']
         mail = request.form['mail']
