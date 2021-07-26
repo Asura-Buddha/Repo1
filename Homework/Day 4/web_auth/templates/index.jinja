@@ -7,4 +7,8 @@
     {% if user %}
         Hello {{ user }}, what would you like to do today?
     {% endif %}
+    
+    <p>
+        <button type="button" class="btn btn-success" href="{% url 'login' %}"> Login </button>
+    </p>
 {% endblock %}
