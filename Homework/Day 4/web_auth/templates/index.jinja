@@ -4,4 +4,7 @@
 
 {% block body %}
     Index Page
+    {% if user %}
+        Hello {{ user }}, what would you like to do today?
+    {% endif %}
 {% endblock %}

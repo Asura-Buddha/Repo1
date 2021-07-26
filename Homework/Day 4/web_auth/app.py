@@ -9,9 +9,10 @@ app.secret_key = 'QWERTYUJHGFDSWERTYUJKasdasd'
 @app.route('/')
 def index():
     if (session.get('user')):
-        return redirect(url_for('users'))
-
-    return render_template('index.jinja')
+        user = session.get('user')
+    else:
+        user = False
+    return render_template('index.jinja', user = user)
 
 
 # login
@@ -22,14 +23,15 @@ def login():
         password = request.form["pss"]
         if User.get_user(username, 'users.csv'):
             tmp = User.get_user(username, 'users.csv')
-            if password == tmp[2]:
+            if password == tmp.password:
                 session['user'] = username
                 redirect(url_for("index"))
                 '''user logged in'''
         else:
+            sw = "try again"
             pass
             '''notify user that name or pass is incorrect, send bak to login page'''
-    return render_template('login.jinja')
+    return render_template('login.jinja',sw = sw)
 
 
 # register
@@ -46,12 +48,14 @@ def register():
                 tmp.save_db('users.csv')
                 return redirect(url_for('login'))
             else:
+                sw1 = "ps1ps2"
                 pass
-                # not sure how to return register with just 1 thing changed
+
         else:
+            sw2 = "user taken"
             pass
-            # same problem but with "username has been taken"
-    return render_template('register.jinja')
+
+    return render_template('register.jinja',sw1 = sw1, sw2 = sw2)
 
 
 # all users

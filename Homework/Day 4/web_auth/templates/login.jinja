@@ -9,4 +9,7 @@
     <input type="text" name="pss"> Password <br>
     <input type="submit" value="Submit">
     </form>
+    {% if sw == "try again" %}
+        <p style="color:red"> The username or password is incorrect. Please try again </p>
+    {% endif %}
 {% endblock %}

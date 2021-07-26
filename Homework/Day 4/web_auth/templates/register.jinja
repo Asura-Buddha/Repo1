@@ -6,9 +6,16 @@
     Register Page
     <form action ="#" method = "post">
     <input type="text" name="nm"> Username <br>
+
     <input type="text" name="mail"> Email <br>
     <input type="text" name="ps1"> Password <br>
     <input type="text" name="ps2"> Confirm Password <br>
     <input type="submit" value="Submit">
     </form>
+    {% if sw2 == "user taken" %}
+        <p style="color:red"> This username is taken. Please try again</p>
+    {% endif %}
+    {% if sw1 == "ps1ps2" %}
+        <p style="color:red"> The passwords do not match. Please try again </p>
+    {% endif %}
 {% endblock %}
