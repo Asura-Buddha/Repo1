@@ -48,7 +48,9 @@ class User:
         with open(db) as file:
             csv_reader = csv.reader(file, delimiter = ',')
             for row in csv_reader:
-                if len(row) != 0:
+                if len(row) == 0:
+                    pass
+                else:
                     result.append(User.get_user(row[0],'users.csv'))
         return result
 
