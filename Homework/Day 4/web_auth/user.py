@@ -36,9 +36,7 @@ class User:
         with open(db) as file:
             csv_reader = csv.reader(file, delimiter = ',')
             for row in csv_reader:
-                if len(row) == 0:
-                    pass
-                elif (row[0] == username):
+                if (row[0] == username):
                     return User(row[0], row[1], row[2])
         return False
 
