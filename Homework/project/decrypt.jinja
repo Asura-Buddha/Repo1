@@ -1,0 +1,17 @@
+{% extends 'base.jinja' %}
+
+{% block title %}Decryption Page {% endblock %}
+
+{% block body %}
+    Decryption
+    <form action ="#" method = "post">
+    <input type="file" name="s_img"> Encrypted Image <br>
+    <input type="submit" value="Submit">
+    </form>
+    Output
+    {% if msg not 0 %}
+        <p> Here is your decrypted message</p>
+        <p> {{ msg }}</p>
+    {% endif %}
+
+{% endblock %}
