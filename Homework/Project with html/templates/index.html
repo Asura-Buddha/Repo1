@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ethereal by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content color0 span-3-75">
+									<h1 class="major">Hello, my name<br />
+									is Adil</h1>
+									<p><strong> This is an encryption and decryption device used to embed secret messages into pictures</strong></p>
+									<ul class="actions">
+										<li><a href="#first" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+									</ul>
+								</div>
+								<div class="image filtered span-1-75" data-position="25% 25%">
+									<img src="images/pic01.jpg" alt="" />
+								</div>
+							</section>
+
+						<!-- Panel (Spotlight) -->
+							<section class="panel spotlight medium right" id="first">
+								<div class="content span-7">
+									<h2 class="major">Project Outline</h2>
+									<p>This is a coding project that I worked on over the summer. It utilizes python, html, css, and js, all tied in through flask. The website lets you make secret messages.</p>
+									<ul class="actions">
+										<li><a href="#encrypt" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+									</ul>
+								</div>
+								<div class="image filtered tinted" data-position="top left">
+									<img src="images/pic02.jpg" alt="" />
+								</div>
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color4-alt" id="encrypt">
+								<div class="intro color4">
+									<h2 class="major">Encryption</h2>
+									<p> To use the encryption tool, simply write out your secret message nad then upload any image. The secret message will be encoded in the image. </p>
+									<ul class="actions">
+										<li><a href="#decrypt" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+									</ul>
+								</div>
+								<div class="inner columns divided">
+									<div class="span-3-25">
+										<form method="post" action="#">
+											<div class="fields">
+												<div class="field half">
+													<label for="name">Message</label>
+													<input type="text" name="msg" id="name" />
+												</div>
+												<div class="field half">
+													<label for="img">Image</label>
+													<input type="file" name="img" id="img" />
+												</div>
+												{% if e_img %}
+													<div class="field">
+														<label>Encrypted Image</label>
+														{{ e_img }}
+													</div>
+												{% endif %}
+											</div>
+											<ul class="actions">
+												<li><input type="submit" value="Encrypt" class="button primary" /></li>
+											</ul>
+										</form>
+									</div>
+
+								</div>
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color4-alt" id="decrypt">
+								<div class="intro color4">
+									<h2 class="major">Encryption</h2>
+									<p> To use the decryption tool, simply input an encrypted image. The secret message will be displayed. </p>
+									<ul class="first">
+										<li><a href="#first" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+									</ul>
+								</div>
+								<div class="inner columns divided">
+									<div class="span-3-25">
+										<form method="post" action="#">
+											<div class="fields">
+												<div class="field half">
+													<label for="img">Image</label>
+													<input type="file" name="s_img" id="img" />
+												</div>
+												<div class="field half">
+												</div>
+												{% if s_msg %}
+													<div class="field">
+														<label>Decrypted Message</label>
+														<p> {{ s_msg }} </p>
+													</div>
+												{% endif %}
+											</div>
+											<ul class="actions">
+												<li><input type="submit" value="Decrypt" class="button primary" /></li>
+											</ul>
+										</form>
+									</div>
+								</div>
+							</section>
+
+
+						<!-- Copyright -->
+							<div class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
